@@ -1,0 +1,12 @@
+<h1>Welcome to the Tech Blog</h1>
+
+<section>
+    <h2>Latest Posts</h2>
+    {{#each posts}}
+    <article>
+        <h3>{{this.title}}</h3>
+        <p>{{this.content}}</p>
+        <small>Written by {{this.author}}</small>
+    </article>
+    {{/each}}
+</section>

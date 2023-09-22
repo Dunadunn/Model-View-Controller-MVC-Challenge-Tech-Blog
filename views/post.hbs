@@ -1,0 +1,25 @@
+<article>
+    <h1>{{post.title}}</h1>
+    <p>{{post.content}}</p>
+    <small>Written by {{post.author}} on {{post.date}}</small>
+</article>
+
+<section>
+    <h2>Comments</h2>
+    {{#each comments}}
+    <div>
+        <p>{{this.content}}</p>
+        <small>By {{this.commenter}}</small>
+    </div>
+    {{/each}}
+</section>
+
+{{#if loggedIn}}
+<section>
+    <h2>Leave a Comment</h2>
+    <form action="/api/comments" method="post">
+        <textarea name="comment" required></textarea>
+        <button type="submit">Comment</button>
+    </form>
+</section>
+{{/if}}
